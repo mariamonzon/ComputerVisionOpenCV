@@ -1,4 +1,4 @@
-# Introduction to Computor VisionOpenCV
+# Introduction to Computor Vision  OpenCV
 ##  1. Getting Started with OpenCV 
 ### Introduction to computer vision 
 ### Basic image operations 
