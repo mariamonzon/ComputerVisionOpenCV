@@ -103,7 +103,7 @@ kSize = 3;
 Mat imageDilated1;
 Mat kernel2 = getStructuringElement(cv::MORPH_ELLIPSE,  cv::Size(kSize, kSize));
 dilate(image, imageDilated1, kernel2, Point(-1,-1), 1);
-erode(image, imageEroded, kernel1);
+erode(image, imageEroded, kernel2);
 ```
 
 ###  Implementing morphological operations from scratch 
