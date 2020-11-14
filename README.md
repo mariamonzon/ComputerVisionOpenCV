@@ -99,6 +99,12 @@ Structuring elements ( a.k.a Kernels ) are used to modify the shape of the blobs
         borderType pixel extrapolation method.
         borderValue border value in case of a constant border
 
+There are 3 types of structuring elements supported by OpenCV.For creating structuring elements, OpenCV provides the function ```cv::getStructuringElement```
+
+- Ellipse/Circular shaped
+- Rectangular shaped
+- Cross shaped
+
 ```cpp
 kSize = 3;
 Mat imageDilated1;
