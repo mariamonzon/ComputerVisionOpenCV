@@ -63,6 +63,7 @@ One of the easiest ways of creating Binary images from grayscale images is using
     int     type         # type is thethresholding type ( THRESH_BINARY, THRESH_BINARY_INV, etc )
     )
 ```
+
 ### Erosion / Dilation 
 - **Dilation** is used to merge or expand white regions which may be close to each other and
 - **Erosion** is used to separate or shrink white regions
@@ -105,13 +106,10 @@ There are 3 types of structuring elements supported by OpenCV. For creating stru
 1. Rectangular shaped
 1. Cross shaped
 
-`
-element = cv::getStructuringElement(elementType, kernelSize, anchor)
-`
-
 ```cpp
 kSize = 3;
 Mat imageDilated1;
+// element = cv::getStructuringElement(elementType, kernelSize, anchor)
 Mat kernel = getStructuringElement(cv::MORPH_ELLIPSE,  cv::Size(kSize, kSize));
 dilate(image, imageDilated1, kernel, Point(-1,-1), 1);
 erode(image, imageEroded, kernel);
