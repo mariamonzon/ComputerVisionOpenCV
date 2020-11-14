@@ -55,26 +55,14 @@ A binary image consists of pixels that are either completely black ( pixel value
 It is easier to come up with algorithms which work on binary images. 
 One of the easiest ways of creating Binary images from grayscale images is using Thresholding. Thresholding is one such example where we can simply use an OpenCV function and not worry about the implementation correctness and efficiency.
 
-Cpp'''
-    double cv::threshold    (   InputArray  src,
-    OutputArray     dst,
-    double  thresh,
-    double  maxval,
-    int     type 
+    double cv::threshold    (   
+    InputArray  src,     # src is the input array ot image (multiple-channel, 8-bit or 32-bit floating point).
+    OutputArray     dst, # dst is the output array or image of the same size and type and the same number of channels as src.
+    double  thresh,      # thresh is the threshold value.
+    double  maxval,      # maxval is the maximum value to use with the THRESH_BINARY and THRESH_BINARY_INV thresholding types.
+    int     type         # type is thethresholding type ( THRESH_BINARY, THRESH_BINARY_INV, etc )
     )
 
-Input:
-
-    src is the input array ot image (multiple-channel, 8-bit or 32-bit floating point).
-    thresh is the threshold value.
-    maxval is the maximum value to use with the THRESH_BINARY and THRESH_BINARY_INV thresholding types.
-    type is thethresholding type ( THRESH_BINARY, THRESH_BINARY_INV, etc )
-
-Output:
-
-    dst is the output array or image of the same size and type and the same number of channels as src.
-
-'''
 ### Erosion / Dilation 
 ###  Implementing morphological operations from scratch. 
 ###  Opening and Closing 
