@@ -86,14 +86,15 @@ Dilation and Erosion operations are achieved by using dilate and erode functions
     const Scalar &     borderValue = morphologyDefaultBorderValue() 
     )
     
-    // Parameters
-    src input image; the number of channels can be arbitrary, but the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
-    dst output image of the same size and type as src.
-    kernel structuring element used for dilation; if elemenat=Mat(), a 3 x 3 rectangular structuring element is used.
-    anchor position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
-    iterations number of times dilation is applied.
-    borderType pixel extrapolation method.
-    borderValue border value in case of a constant border
+        // Parameters
+
+        src input image; the number of channels can be arbitrary, but the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+        dst output image of the same size and type as src.
+        kernel structuring element used for dilation; if elemenat=Mat(), a 3 x 3 rectangular structuring element is used.
+        anchor position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
+        iterations number of times dilation is applied.
+        borderType pixel extrapolation method.
+        borderValue border value in case of a constant border
 
 ###  Implementing morphological operations from scratch 
 ###  Opening and Closing 
