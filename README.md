@@ -97,6 +97,13 @@ Dilation and Erosion operations are achieved by using dilate and erode functions
         borderType pixel extrapolation method.
         borderValue border value in case of a constant border
 
+```cpp
+kSize = 3;
+Mat imageDilated1;
+Mat kernel2 = getStructuringElement(cv::MORPH_ELLIPSE,  cv::Size(kSize, kSize));
+dilate(image, imageDilated1, kernel2, Point(-1,-1), 1);
+```
+
 ###  Implementing morphological operations from scratch 
 ###  Opening and Closing 
 ### Connected Component Analysis 
