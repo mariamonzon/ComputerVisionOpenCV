@@ -64,7 +64,10 @@ One of the easiest ways of creating Binary images from grayscale images is using
     )
 
 ### Erosion / Dilation 
-###  Implementing morphological operations from scratch. 
+- 'Dilation' is used to merge or expand white regions which may be close to each other and
+- 'Erosion' is used to separate or shrink white regions
+
+###  Implementing morphological operations from scratch 
 ###  Opening and Closing 
 ### Connected Component Analysis 
 ### Contour Analysis 
