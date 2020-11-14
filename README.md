@@ -99,18 +99,22 @@ Structuring elements ( a.k.a Kernels ) are used to modify the shape of the blobs
         borderType pixel extrapolation method.
         borderValue border value in case of a constant border
 
-There are 3 types of structuring elements supported by OpenCV.For creating structuring elements, OpenCV provides the function ```cv::getStructuringElement```
+There are 3 types of structuring elements supported by OpenCV. For creating structuring elements, OpenCV provides the function [**`cv::getStructuringElement`**](https://docs.opencv.org/4.1.0/d4/d86/group__imgproc__filter.html#gac342a1bb6eabf6f55c803b09268e36dc). You can also create any other structuring element using numpy arrays. It is simply a matrix.
 
-- Ellipse/Circular shaped
-- Rectangular shaped
-- Cross shaped
+1. Ellipse/Circular shaped
+1. Rectangular shaped
+1. Cross shaped
+
+`
+element = cv::getStructuringElement(elementType, kernelSize, anchor)
+`
 
 ```cpp
 kSize = 3;
 Mat imageDilated1;
-Mat kernel2 = getStructuringElement(cv::MORPH_ELLIPSE,  cv::Size(kSize, kSize));
-dilate(image, imageDilated1, kernel2, Point(-1,-1), 1);
-erode(image, imageEroded, kernel2);
+Mat kernel = getStructuringElement(cv::MORPH_ELLIPSE,  cv::Size(kSize, kSize));
+dilate(image, imageDilated1, kernel, Point(-1,-1), 1);
+erode(image, imageEroded, kernel);
 ```
 
 ###  Implementing morphological operations from scratch 
