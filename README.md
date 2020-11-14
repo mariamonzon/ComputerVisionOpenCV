@@ -68,6 +68,7 @@ One of the easiest ways of creating Binary images from grayscale images is using
 - **Erosion** is used to separate or shrink white regions
 Dilation and Erosion operations are achieved by using dilate and erode functions of OpenCV
 
+'''
     void cv::dilate    (    InputArray     src,
     OutputArray     dst,
     InputArray     kernel,
@@ -86,9 +87,10 @@ Dilation and Erosion operations are achieved by using dilate and erode functions
     const Scalar &     borderValue = morphologyDefaultBorderValue() 
     )
     
+ ''' 
         // Parameters
 
-        src input image; the number of channels can be arbitrary, but the depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+        src input image; the number of channels can be arbitrary, but depth should be CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
         dst output image of the same size and type as src.
         kernel structuring element used for dilation; if elemenat=Mat(), a 3 x 3 rectangular structuring element is used.
         anchor position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
