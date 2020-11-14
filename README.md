@@ -67,7 +67,8 @@ One of the easiest ways of creating Binary images from grayscale images is using
 - **Dilation** is used to merge or expand white regions which may be close to each other and
 - **Erosion** is used to separate or shrink white regions
 
-Dilation and Erosion operations are achieved by using dilate and erode functions of OpenCV
+Dilation and Erosion operations are achieved by using dilate and erode functions of OpenCV. Structuring element is used to perform dilation and erosion operations. 
+Structuring elements ( a.k.a Kernels ) are used to modify the shape of the blobs. These are used to scan the image and modify the pixels on the basis of some rule/algorithm ( which governs whether you are doing Erosion or Dilation or something else. 
 
 ```cpp
     void cv::dilate    (    InputArray     src,
