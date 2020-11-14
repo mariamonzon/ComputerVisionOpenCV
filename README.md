@@ -66,6 +66,7 @@ One of the easiest ways of creating Binary images from grayscale images is using
 ### Erosion / Dilation 
 - **Dilation** is used to merge or expand white regions which may be close to each other and
 - **Erosion** is used to separate or shrink white regions
+
 Dilation and Erosion operations are achieved by using dilate and erode functions of OpenCV
 
 ```cpp
