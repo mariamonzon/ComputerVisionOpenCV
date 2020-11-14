@@ -50,6 +50,10 @@ The main problems trated in computer vision can be rechognised as:
 
 ## 3. Binary Image Processing 
 ### Thresholding 
+In many computer vision tasks, we need to process a binary image.
+A binary image consists of pixels that are either completely black ( pixel value 0 ) or completely white ( pixel value 255 ). 
+It is easier to come up with algorithms which work on binary images. 
+One of the easiest ways of creating Binary images from grayscale images is using Thresholding.
 ### Erosion / Dilation 
 ###  Implementing morphological operations from scratch. 
 ###  Opening and Closing 
