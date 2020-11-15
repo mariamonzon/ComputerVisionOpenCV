@@ -141,6 +141,7 @@ void morphologyEx(Mat srcImage,         //Source image. The number of channels c
                 )
 ```
 ### Connected Component Analysis 
+Connected Component Analysis (CCA) is a fancy name for labeling blobs in a binary image. So, it can also be used to count the number of blobs ( also called connected components ) in a binary image.
 ### Contour Analysis 
 ### Blob Detection
 ### Coin Detection
