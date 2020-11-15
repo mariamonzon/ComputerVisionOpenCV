@@ -192,10 +192,18 @@ Once you have detected the contours from an image, it becomes very easy to do fu
 	    // You can try more different parameters
 	    cv.approxPolyDP(cnt, tmp, 3, true);
 	    poly.push_back(tmp);
-	    cnt.delete(); tmp.delete();
-	    
+	    cnt.delete(); tmp.delete();   	
 }
 ```
 
 ### Blob Detection
+A Blob is a group of connected pixels in an image that share some common property. OpenCV provides a convenient way to detect blobs and filter them based on different characteristics. SimpleBlobDetector algorithm is controlled by parameters and has the following steps:
+
+1. **Thresholding** : Convert the source images to several binary images by thresholding the source image with thresholds starting at minThreshold. These thresholds are incremented  by thresholdStep until maxThreshold. So the first threshold is minThreshold, the second is minThreshold + thresholdStep, the third is minThreshold + 2 x thresholdStep, and so on.
+2. **Grouping** : In each binary image,  connected white pixels are grouped together.  Let’s call these binary blobs.
+3. **Merging**  : The centers of the binary blobs in the binary images are computed, and  blobs located closer than minDistBetweenBlobs are merged.
+4. **Center & Radius Calculation** :  The centers and radii of the new merged blobs are computed and returned.
+
+- **Convexity** : A picture is worth a thousand words.  Convexity is defined as the (Area of the Blob / Area of it’s convex hull). Now, Convex Hull of a shape is the tightest convex shape that completely encloses the shape.  To filter by convexity, set filterByConvexity = 1, followed by setting 0 ≤ minConvexity ≤ 1 and maxConvexity ( ≤ 1) 
+- **Inertia Ratio** : Don’t let this scare you. Mathematicians often use confusing words to describe something very simple. All you have to know is that this measures how elongated a shape is. E.g. for a circle, this value is 1, for an ellipse it is between 0 and 1, and for a line it is 0. To filter by inertia ratio, set filterByInertia = 1, and set 0 ≤ minInertiaRatio ≤ 1 and maxInertiaRatio (≤ 1 ) appropriately.
 ### Coin Detection
