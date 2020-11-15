@@ -170,11 +170,22 @@ void cv::findContours	(	InputArray image, //input image (8-bit single-channel). 
 				Point 	offset = Point() 	// Optional offset by which every contour point is shifted. 
 			)
 ```
+Once you have detected the contours from an image, it becomes very easy to do further analysis on the basis of various properties of contours.
 ```cpp
 	// Find all contours in the image
 	vector<vector<Point> > contours;
 	vector<Vec4i> hierarchy;
 	findContours(imageGray, contours, hierarchy, RETR_LIST, CHAIN_APPROX_SIMPLE);
+	Moments M;
+	int x,y;
+	for (size_t i=0; i < contours.size(); i++){
+	    // Use the contour moments to find the centroid
+	    M = moments(contours[i]);
+	    x = int(M.m10/double(M.m00));
+	    y = int(M.m01/double(M.m00));
+	    // Mark the center
+	    circle(image, Point(x,y), 10, Scalar(255,0,0), -1);
+}
 ```
 
 ### Blob Detection
