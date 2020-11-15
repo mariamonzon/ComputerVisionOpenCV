@@ -170,6 +170,12 @@ void cv::findContours	(	InputArray image, //input image (8-bit single-channel). 
 				Point 	offset = Point() 	// Optional offset by which every contour point is shifted. 
 			)
 ```
+```cpp
+	// Find all contours in the image
+	vector<vector<Point> > contours;
+	vector<Vec4i> hierarchy;
+	findContours(imageGray, contours, hierarchy, RETR_LIST, CHAIN_APPROX_SIMPLE);
+```
 
 ### Blob Detection
 ### Coin Detection
