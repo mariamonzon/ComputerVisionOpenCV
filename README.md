@@ -140,17 +140,16 @@ void morphologyEx(Mat srcImage,         //Source image. The number of channels c
                 const Scalar &  	borderValue = morphologyDefaultBorderValue() //	Border value in case of a constant border. The default value has a special meaning.
                 )
 ```
+
 ### Connected Component Analysis 
 Connected Component Analysis (CCA) is a fancy name for labeling blobs in a binary image. So, it can also be used to count the number of blobs ( also called connected components ) in a binary image. Blobs are defined as group of pixels connected to each other. CCA will create a mask where all pixels corresponding to the background are 0, all pixels corresponding to the first blob, are 1, those corresponding to the second blob are 2 and so on and so forth.
 
 ```cpp
 
-int cv::connectedComponents( 	
-				InputArray  	image,  	// Source image. 8-bit single-channel image to be labeled 
+int cv::connectedComponents( 	InputArray  	image,  	// Source image. 8-bit single-channel image to be labeled 
 				OutputArray  	labels, 	// Destination labeled image 
 				int  	connectivity = 8, 	// 8 or 4 for 8-way or 4-way connectivity respectively 
-				int  	ltype = CV_32S  	// output image label type. Currently CV_32S and CV_16U are supported. 
-	) 	
+				int  	ltype = CV_32S  	// output image label type. Currently CV_32S and CV_16U are supported. 	) 	
 
 // Threshold Image
 Mat imThresh , imLabels;
@@ -161,6 +160,14 @@ int nComponents = connectedComponents(imThresh,imLabels);
 ### Contour Analysis 
 Contours are simply the boundaries of an object or part of object in an image.
 They are useful in shape analysis and object Detection/Recognition using traditional Computer Vision algorithms.
-
+```cpp
+void cv::findContours	(	InputArray 	image,
+				OutputArrayOfArrays 	contours,
+				OutputArray 	hierarchy,
+				int 	mode,
+				int 	method,
+				Point 	offset = Point() 
+			)	
+```
 ### Blob Detection
 ### Coin Detection
