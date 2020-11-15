@@ -145,11 +145,11 @@ Connected Component Analysis (CCA) is a fancy name for labeling blobs in a binar
 
 ```cpp
 
-int cv::connectedComponents 	( 	
-        InputArray  	image,  //Source image. The number of channels can be arbitrary.
-		OutputArray  	labels,
-		int  	connectivity = 8,
-		int  	ltype = CV_32S 
+int cv::connectedComponents( 	
+				InputArray  	image,  	// Source image. 8-bit single-channel image to be labeled 
+				OutputArray  	labels, 	// Destination labeled image 
+				int  	connectivity = 8, 	// 8 or 4 for 8-way or 4-way connectivity respectively 
+				int  	ltype = CV_32S  	// output image label type. Currently CV_32S and CV_16U are supported. 
 	) 	
 
 // Threshold Image
@@ -158,7 +158,9 @@ threshold(img, imThresh, 127, 255, THRESH_BINARY);
 // Find connected components
 int nComponents = connectedComponents(imThresh,imLabels);
 ```
-
 ### Contour Analysis 
+Contours are simply the boundaries of an object or part of object in an image.
+They are useful in shape analysis and object Detection/Recognition using traditional Computer Vision algorithms.
+
 ### Blob Detection
 ### Coin Detection
