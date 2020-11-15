@@ -160,14 +160,16 @@ int nComponents = connectedComponents(imThresh,imLabels);
 ### Contour Analysis 
 Contours are simply the boundaries of an object or part of object in an image.
 They are useful in shape analysis and object Detection/Recognition using traditional Computer Vision algorithms.
+
 ```cpp
-void cv::findContours	(	InputArray 	image,
-				OutputArrayOfArrays 	contours,
-				OutputArray 	hierarchy,
-				int 	mode,
-				int 	method,
-				Point 	offset = Point() 
-			)	
+void cv::findContours	(	InputArray image, //input image (8-bit single-channel). Non-zero pixels are treated as 1's, zero pixels remain 0's,  the image is treated as  binary 
+				OutputArrayOfArrays contours, 	// Detected contours. Each contour is stored as a vector of points.
+				OutputArray 	hierarchy,    	// Optional output vector containing information about the image topology.
+				int 	mode,		    	// Contour retrieval mode, ( RETR_EXTERNAL, RETR_LIST, RETR_CCOMP, RETR_TREE )
+				int 	method,			// Contour approximation method. ( CHAIN_APPROX_NONE, CHAIN_APPROX_SIMPLE, CHAIN_APPROX_TC89_L1 etc )
+				Point 	offset = Point() 	// Optional offset by which every contour point is shifted. 
+			)
 ```
+
 ### Blob Detection
 ### Coin Detection
