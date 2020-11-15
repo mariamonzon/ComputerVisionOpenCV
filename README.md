@@ -185,6 +185,15 @@ Once you have detected the contours from an image, it becomes very easy to do fu
 	    // Fit a circle
 	    minEnclosingCircle(contours[i],center,radius);
 	    circle(image,center,radius, Scalar(125,125,125), 2);
+	    
+	    //Aporximate for close contours
+	    let tmp = new cv.Mat();
+	    let cnt = contours.get(i);
+	    // You can try more different parameters
+	    cv.approxPolyDP(cnt, tmp, 3, true);
+	    poly.push_back(tmp);
+	    cnt.delete(); tmp.delete();
+	    
 }
 ```
 
