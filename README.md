@@ -185,6 +185,15 @@ Once you have detected the contours from an image, it becomes very easy to do fu
 	    y = int(M.m01/double(M.m00));
 	    // Mark the center
 	    circle(image, Point(x,y), 10, Scalar(255,0,0), -1);
+	    //compute area and perimeter
+	    area = contourArea(contours[i]);
+	    perimeter = arcLength(contours[i],true);
+	    // Vertical rectangle bounding box
+	    rect = boundingRect(contours[i]);
+	    rectangle(image, rect, Scalar(255,0,255), 2);
+	    // Fit a circle
+	    minEnclosingCircle(contours[i],center,radius);
+	    circle(image,center,radius, Scalar(125,125,125), 2);
 }
 ```
 
