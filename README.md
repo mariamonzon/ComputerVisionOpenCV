@@ -72,13 +72,13 @@ Dilation and Erosion operations are achieved by using dilate and erode functions
 Structuring elements ( a.k.a Kernels ) are used to modify the shape of the blobs. These are used to scan the image and modify the pixels on the basis of some rule/algorithm ( which governs whether you are doing Erosion or Dilation or something else. 
 
 ```cpp
-    void cv::dilate    (    InputArray     src,
-    OutputArray     dst,
-    InputArray     kernel,
-    Point     anchor = Point(-1,-1),
-    int     iterations = 1,
-    int     borderType = BORDER_CONSTANT,
-    const Scalar &     borderValue = morphologyDefaultBorderValue() 
+    void cv::dilate(   	InputArray     src,  	// src input image; the number of channels can be arbitrary, but depth should be CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+			OutputArray     dst, 	// dst output image of the same size and type as src.
+			InputArray     kernel,	// kernel structuring element used for dilation; if elemenat=Mat(), a 3 x 3 rectangular structuring element is used.
+			Point     anchor = Point(-1,-1),  // anchor position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
+			int     iterations = 1, // iterations number of times dilation is applied.
+			int     borderType = BORDER_CONSTANT,	// borderType pixel extrapolation method.
+			const Scalar &     borderValue = morphologyDefaultBorderValue() // borderValue border value in case of a constant border
     )
         
     void cv::erode    (    InputArray     src,
@@ -90,15 +90,6 @@ Structuring elements ( a.k.a Kernels ) are used to modify the shape of the blobs
     const Scalar &     borderValue = morphologyDefaultBorderValue() 
     )
 ```
-        // Parameters
-
-        src input image; the number of channels can be arbitrary, but depth should be CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
-        dst output image of the same size and type as src.
-        kernel structuring element used for dilation; if elemenat=Mat(), a 3 x 3 rectangular structuring element is used.
-        anchor position of the anchor within the element; default value (-1, -1) means that the anchor is at the element center.
-        iterations number of times dilation is applied.
-        borderType pixel extrapolation method.
-        borderValue border value in case of a constant border
 
 There are 3 types of structuring elements supported by OpenCV. For creating structuring elements, OpenCV provides the function [**`cv::getStructuringElement`**](https://docs.opencv.org/4.1.0/d4/d86/group__imgproc__filter.html#gac342a1bb6eabf6f55c803b09268e36dc). You can also create any other structuring element using numpy arrays. It is simply a matrix.
 
