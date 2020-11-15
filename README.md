@@ -129,7 +129,7 @@ In OpenCV, the opening and closing operations are implemented using **Morphology
 
 To specify between the opening and closing operation to be performed we specify an argument in the function [**`MorphologyEx`**](https://docs.opencv.org/4.1.0/d4/d86/group__imgproc__filter.html?fbclid=IwAR1GtoDsIv4Fi8o7vrZ8SGb3bb1uiU_Nyt94fc9J2sHKF7FlbDNT1fq-kI0#ga67493776e3ad1a3df63883829375201f) definition. The argument for opening operation and closing operations are [**`MORPH_OPEN`**] and [**`MORPH_CLOSE`**] respectively.
 
-``cpp
+```cpp
 void morphologyEx(Mat initialImage, Mat imageMorphOpened, MORPH_OPEN, Mat structuringElement)
 ```
 
@@ -137,15 +137,15 @@ void morphologyEx(Mat initialImage, Mat imageMorphOpened, MORPH_OPEN, Mat struct
 void morphologyEx(Mat initialImage, Mat imageMorphClosed, MORPH_CLOSE, Mat structuringElement)
 ```
 
-**Parameters**
-- **`src`**	Source image. The number of channels can be arbitrary. The depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
-- **`dst`**	Destination image of the same size and type as source image.
-- **`op`**	Type of a morphological operation
-- **`kernel`**	Structuring element. It can be created using getStructuringElement.
-- **`anchor`**	Anchor position with the kernel. Negative values mean that the anchor is at the kernel center.
-- **`iterations`**	Number of times erosion and dilation are applied.
-- **`borderType`**	Pixel extrapolation method.
-- **`borderValue`**	Border value in case of a constant border. The default value has a special meaning.
+        **Parameters**
+        - **`src`**	Source image. The number of channels can be arbitrary. The depth should be one of CV_8U, CV_16U, CV_16S, CV_32F or CV_64F.
+        - **`dst`**	Destination image of the same size and type as source image.
+        - **`op`**	Type of a morphological operation
+        - **`kernel`**	Structuring element. It can be created using getStructuringElement.
+        - **`anchor`**	Anchor position with the kernel. Negative values mean that the anchor is at the kernel center.
+        - **`iterations`**	Number of times erosion and dilation are applied.
+        - **`borderType`**	Pixel extrapolation method.
+        - **`borderValue`**	Border value in case of a constant border. The default value has a special meaning.
 
 ### Connected Component Analysis 
 ### Contour Analysis 
